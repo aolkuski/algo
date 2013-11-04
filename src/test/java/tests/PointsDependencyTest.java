@@ -4,10 +4,10 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import datastructures.Matrix;
-import datastructures.Point;
+import datastructures.matrix.Matrix;
+import datastructures.matrix.MatrixDet;
+import datastructures.points.Point;
 
-import algo.pointdependency.MatrixDet;
 import algo.pointdependency.Predicate;
 
 

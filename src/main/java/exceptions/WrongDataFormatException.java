@@ -1,4 +1,4 @@
-package helpers;
+package exceptions;
 
 
 public class WrongDataFormatException extends Exception{

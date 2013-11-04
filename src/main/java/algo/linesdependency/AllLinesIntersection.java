@@ -3,8 +3,8 @@ package algo.linesdependency;
 
 import java.util.ArrayList;
 
-import datastructures.Point;
-import datastructures.Section;
+import datastructures.points.Point;
+import datastructures.sections.Section;
 
 
 public class AllLinesIntersection {

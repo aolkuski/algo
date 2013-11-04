@@ -1,8 +1,8 @@
 package program;
 
 import algo.linesdependency.LinesIntersection;
-import datastructures.Point;
-import datastructures.Section;
+import datastructures.points.Point;
+import datastructures.sections.Section;
 
 
 public class Main {

@@ -1,6 +1,5 @@
-package algo.pointdependency;
+package datastructures.matrix;
 
-import datastructures.Matrix;
 
 
 public class MatrixDet {

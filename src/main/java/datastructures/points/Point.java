@@ -1,12 +1,16 @@
-package datastructures;
+package datastructures.points;
 
 
 public class Point {
 
     private char id;
 
-    public char getId() {
-        return id;
+    public String getId() {
+        if(this.getIntId() != 0) {
+            return String.valueOf(this.getIntId());
+        } else {
+            return String.valueOf(id);
+        }
     }
 
     public void setId(char id) {
@@ -17,7 +21,18 @@ public class Point {
     private double y;
     private double r;
     private double fi;
+    private int intId;
 
+
+    
+    public int getIntId() {
+        return intId;
+    }
+
+    
+    public void setIntId(int intId) {
+        this.intId = intId;
+    }
 
     public double getR() {
         return r;
@@ -51,6 +66,14 @@ public class Point {
         this.fi = countFi();
         this.id = pId;
     }
+    
+    public Point(int pId, Double pX, Double pY) {
+        this.x = pX;
+        this.y = pY;
+        this.r = Math.sqrt(this.x * this.x + this.y * this.y);
+        this.fi = countFi();
+        this.intId = pId;
+    }
 
     public double getX() {
         return x;
@@ -70,7 +93,6 @@ public class Point {
 
 
     public String toString() {
-        if (this.fi == 0) this.fi = countFi();
         return "ID: "+this.getId()+", x = " + this.getX() + ", y = " + this.getY() + ", r = " + this.getR() + ", fi = " + this.getFi();
     }
     

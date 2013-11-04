@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 import org.junit.Test;
 
-import algo.convexhull.PointsOrder;
 
-import datastructures.Point;
+import datastructures.points.Point;
+import datastructures.points.PointsOrder;
 
 
 public class SortingPointsTest {

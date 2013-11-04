@@ -1,9 +1,8 @@
-package algo.convexhull;
+package datastructures.points;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
-import datastructures.Point;
 
 
 public class PointsOrder {

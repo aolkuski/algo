@@ -1,8 +1,8 @@
 package algo.linesdependency;
 
-import algo.pointdependency.MatrixDet;
-import datastructures.Matrix;
-import datastructures.Section;
+import datastructures.matrix.Matrix;
+import datastructures.matrix.MatrixDet;
+import datastructures.sections.Section;
 
 
 public class LinesIntersection {

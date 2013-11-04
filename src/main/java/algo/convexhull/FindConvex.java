@@ -4,11 +4,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Stack;
 
-import algo.pointdependency.MatrixDet;
 import algo.pointdependency.Predicate;
 
-import datastructures.Matrix;
-import datastructures.Point;
+import datastructures.matrix.Matrix;
+import datastructures.matrix.MatrixDet;
+import datastructures.points.Point;
+import datastructures.points.PointsOrder;
 
 
 public class FindConvex {

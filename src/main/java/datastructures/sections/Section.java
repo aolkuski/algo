@@ -1,4 +1,6 @@
-package datastructures;
+package datastructures.sections;
+
+import datastructures.points.Point;
 
 
 public class Section {

@@ -1,4 +1,6 @@
-package datastructures;
+package datastructures.matrix;
+
+import datastructures.points.Point;
 
 
 public class Matrix {

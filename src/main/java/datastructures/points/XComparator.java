@@ -1,8 +1,7 @@
-package algo.convexhull;
+package datastructures.points;
 
 import java.util.Comparator;
 
-import datastructures.Point;
 
 public class XComparator implements Comparator<Point>{
 

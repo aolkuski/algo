@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import org.junit.Test;
 
 import algo.linesdependency.AllLinesIntersection;
-import datastructures.Point;
+import datastructures.points.Point;
 
 
 public class AllLinesIntersectionTest {

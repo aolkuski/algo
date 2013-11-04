@@ -5,8 +5,8 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import algo.linesdependency.LinesIntersection;
-import datastructures.Point;
-import datastructures.Section;
+import datastructures.points.Point;
+import datastructures.sections.Section;
 
 
 public class LinesIntersectionTest {

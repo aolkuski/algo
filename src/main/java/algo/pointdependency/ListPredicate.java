@@ -2,8 +2,9 @@ package algo.pointdependency;
 
 import java.util.ArrayList;
 
-import datastructures.Matrix;
-import datastructures.Point;
+import datastructures.matrix.Matrix;
+import datastructures.matrix.MatrixDet;
+import datastructures.points.Point;
 
 
 public class ListPredicate {
