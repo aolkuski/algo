@@ -2,6 +2,7 @@ package datastructures.points;
 
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import exceptions.WrongDataFormatException;
 
@@ -79,5 +80,15 @@ public class PointsListsHelper {
         }
         return ids;
     }
+    
+    public static String getListIdsAsString(ArrayList<Point> points){
+        String res = "";
+        for(Point p:points){
+            res += p.getId();
+        }
+        return res;
+    }
+    
+
 
 }

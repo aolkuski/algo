@@ -2,6 +2,7 @@ package datastructures.points;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 
 
 
@@ -19,9 +20,21 @@ public class PointsOrder {
 
     public static ArrayList<Point> sortByPolarCoordinates(ArrayList<Point> points) {
         ArrayList<Point> sortedPoints = new ArrayList<Point>();
+        sortedPoints = points;       
+        return sortBy(sortedPoints, new PolarComparator());
+    }
+    
+    public static ArrayList<Point> sortById(ArrayList<Point> points){
+        ArrayList<Point> sortedPoints = new ArrayList<Point>();
+        sortedPoints = points;       
+        return sortBy(sortedPoints, new IdComparator());
+    }
+    
+    private static ArrayList<Point> sortBy(ArrayList<Point> points, Comparator<Point> comp){
+        ArrayList<Point> sortedPoints = new ArrayList<Point>();
         sortedPoints = points;
 
-        Collections.sort(sortedPoints, new PolarComparator());
+        Collections.sort(sortedPoints, comp);
         return sortedPoints;
     }
 
@@ -34,7 +47,6 @@ public class PointsOrder {
             p.setY(p.getY()+y);
             p.recalculateFi();
         }
-        
         return sortedPoints;
     }
 }
