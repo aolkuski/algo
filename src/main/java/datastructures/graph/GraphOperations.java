@@ -1,5 +1,9 @@
 package datastructures.graph;
 
+import java.util.ArrayList;
+
+import exceptions.ElementDuplicationException;
+
 /*
 Dodaj wêze³
 Usuñ wêze³
@@ -18,13 +22,17 @@ Czy wêz³y s¹ s¹siednie
 public interface GraphOperations {
 
 	
-	public void addNode(Node pNode);
-	public boolean removeNode(String nodeId);
-	public boolean addEdge(String edgeId);
-	public boolean removeEdge(String edgeId);
-	public ArrayList<Node> getNeighbours(String nodeId);
-	public ArrayList<Edge> getNodeEdges(String nodeId);
-	public Node findNode(String nodeId);
-	public Edge findEgde(String edgeId);
-	public ArrayList<Node>  
+	public boolean addNode(Node pNode) throws ElementDuplicationException ;
+	public boolean removeNode(Integer nodeId);
+	public boolean addEdge(Edge edge);
+	public boolean removeEdge(Integer edgeId);
+	public ArrayList<Node> getNeighbours(Integer nodeId);
+	public ArrayList<Edge> getNodeEdges(Integer nodeId);
+	public Node findNode(Integer nodeId);
+	public Edge findEgde(Integer edgeId);
+	public ArrayList<Node> getEdgeNodes(Integer edgeId);
+	public Integer getEdgesCount();
+	public Integer getNodesCount();
+	public boolean areNodesNeighbours(Integer id1, Integer id2);
+	
 }
