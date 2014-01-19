@@ -23,18 +23,19 @@ public class MatrixGraphTests {
 		m.addEdge(new Edge(1, 2, 3));
 		m.addEdge(new Edge(2, 10, 8));
 		m.addEdge(new Edge(3, 2, 10));
+		m.addEdge(new Edge(2, 4,5));
 
-		m.printMatrix();
+		m.printGraph();
 		m.removeNode(10);
 		
 		m.removeEdge(2);
 		
 		m.addNode(new Node(10));
 		System.out.println("");
-		m.printMatrix();
+		m.printGraph();
 		m.addEdge(new Edge(2, 10, 8));
 		System.out.println("");
-		m.printMatrix();
+		m.printGraph();
 		System.out.println(m);
 	}
 }

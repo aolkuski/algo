@@ -153,8 +153,6 @@ public class MatrixGraph implements GraphOperations {
 			if (edgeArrayList.get(i).getId() == edgeId) {
 				edgeMatrix[edgeArrayList.get(i).getStartNodeId()][edgeArrayList.get(i).getEndNodeId()] = new NullEdge();
 				edgeArrayList.remove(i);
-				
-				break;
 			}
 		}
 
@@ -162,12 +160,54 @@ public class MatrixGraph implements GraphOperations {
 	}
 
 	public ArrayList<Node> getNeighbours(Integer nodeId) {
-		// TODO Auto-generated method stub
-		return null;
+		ArrayList<Node> neighbours = new ArrayList<Node>();
+		for(int i=0;i<edgeMatrix.length;i++){
+			if(edgeMatrix[i][nodeId] instanceof Edge){
+				Edge e = (Edge) edgeMatrix[i][nodeId];
+				if(e.getEndNodeId() == e.getStartNodeId() && (e.getEndNodeId() == nodeId)){
+					neighbours.add(findNode(nodeId));
+				} else {
+					if(nodeId == e.getEndNodeId()){
+						neighbours.add(findNode(e.getStartNodeId()));
+					} else {
+						neighbours.add(findNode(e.getEndNodeId()));
+					}
+					
+				}
+			}
+			if(edgeMatrix[nodeId][i] instanceof Edge){
+				Edge e = (Edge) edgeMatrix[i][nodeId];
+				if(e.getEndNodeId() == e.getStartNodeId() && (e.getEndNodeId() == nodeId)){
+					neighbours.add(findNode(nodeId));
+				} else {
+					if(nodeId == e.getEndNodeId()){
+						neighbours.add(findNode(e.getStartNodeId()));
+					} else {
+						neighbours.add(findNode(e.getEndNodeId()));
+					}
+					
+				}
+			}
+		}
+		return neighbours;
 	}
 
 	public ArrayList<Edge> getNodeEdges(Integer nodeId) {
-		// TODO Auto-generated method stub
+		ArrayList<Edge> edges = new ArrayList<Edge>();
+		for(int i=0;i<edgeMatrix.length;i++){
+			Edge e1 = (Edge) edgeMatrix[i][nodeId];
+			Edge e2 = (Edge) edgeMatrix[nodeId][i];
+			if(i==nodeId && (edgeMatrix[i][i] instanceof Edge)){
+				edges.add(e1);
+				continue;
+			}
+			if(e1 instanceof Edge){
+				edges.add(e1);
+			}
+			if(e2 instanceof Edge){
+				edges.add(e2);
+			}
+		}
 		return null;
 	}
 
@@ -182,7 +222,17 @@ public class MatrixGraph implements GraphOperations {
 	}
 
 	public ArrayList<Node> getEdgeNodes(Integer edgeId) {
-		// TODO Auto-generated method stub
+		ArrayList<Node> nodes = new ArrayList<Node>();
+//		Set<Node> nodesSet = new Set<Node>();
+		for(int i=0;i<edgeMatrix.length;i++){
+			for(int j=0;j<edgeMatrix.length;j++){
+				Edge e = (Edge)edgeMatrix[i][j];
+				if(e.getId() == edgeId){
+					nodes.add(findNode(e.getStartNodeId()));
+					nodes.add(findNode(e.getEndNodeId()));
+				}
+			}
+		}
 		return null;
 	}
 
@@ -221,7 +271,7 @@ public class MatrixGraph implements GraphOperations {
 
 	}
 
-	public void printMatrix() {
+	public void printGraph() {
 		for (int i = 0; i < this.edgeMatrix.length; i++) {
 			for (int j = 0; j < this.edgeMatrix.length; j++) {
 				if (edgeMatrix[i][j] instanceof NullEdge) {

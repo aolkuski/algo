@@ -7,6 +7,21 @@ public class Edge extends AbstractEdge{
 	private Integer endNodeId;
 	private String stringValue;
 	private Integer integerValue;
+	private Double doubleValue;
+	
+	public Double getDoubleValue() {
+		return doubleValue;
+	}
+
+	public void setDoubleValue(Double doubleValue) {
+		this.doubleValue = doubleValue;
+	}
+	
+	public Edge(Integer pStartNodeId, Integer pEndNodeId, Double pVal){
+		this.startNodeId = pStartNodeId;
+		this.endNodeId = pEndNodeId;
+		this.doubleValue = pVal;
+	}
 	
 	public Edge(Integer pId, Integer pStartNodeId, Integer pEndNodeId){
 		this.id = pId;

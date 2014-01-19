@@ -11,5 +11,10 @@
 			<artifactId>junit</artifactId>
 			<version>4.11</version>
 		</dependency>
+		<dependency>
+			<groupId>com.googlecode.jinahya</groupId>
+			<artifactId>bit-io</artifactId>
+			<version>1.0-alpha-13</version>
+		</dependency>
 	</dependencies>
 </project>

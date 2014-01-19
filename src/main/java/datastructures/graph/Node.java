@@ -2,9 +2,30 @@ package datastructures.graph;
 
 import java.util.ArrayList;
 
+import exceptions.ElementDuplicationException;
+
 public class Node {
 	private Integer id;
 	private ArrayList<Edge> edges = new ArrayList<Edge>();
+	private ArrayList<NodeEdge> neighbours = new ArrayList<NodeEdge>();
+	
+
+	public ArrayList<NodeEdge> getNeighbours() {
+		return neighbours;
+	}
+	
+	public void addNeighbour(Node pNode, Integer pVal) throws ElementDuplicationException{
+		addNeighbour(pNode, pVal*1.0);
+	}
+	
+	public void addNeighbour(Node pNode, Double pVal) throws ElementDuplicationException{
+		for(NodeEdge ne : neighbours){
+			if(ne.getNode().getId() == pNode.getId() && ne.getVal() == pVal){
+				throw new ElementDuplicationException("Node id="+pNode.getId()+" is already a neighbour of node id="+this.id);
+			}
+		}
+		neighbours.add(new NodeEdge(pNode, pVal));
+	}
 
 	public void removeEdge(Integer edgeId) {
 		int i = 0;
